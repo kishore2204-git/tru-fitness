@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'django_filters',
     'whitenoise.runserver_nostatic',
 
-    # Local apps    'users.apps.UsersConfig',
+    # Local apps
+    'users.apps.UsersConfig',
     'members.apps.MembersConfig',
     'plans.apps.PlansConfig',
     'subscriptions.apps.SubscriptionsConfig',
@@ -59,7 +60,6 @@ INSTALLED_APPS = [
     'attendance.apps.AttendanceConfig',
     'dashboard.apps.DashboardConfig',
     'portal.apps.PortalConfig',
-    'config.apps.BackendConfig',
 ]
 
 MIDDLEWARE = [
