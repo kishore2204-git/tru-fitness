@@ -34,6 +34,14 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+# On Render, also trust the service's own domain automatically
+RENDER_HOSTNAME = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_HOSTNAME)
+
+# Trust Render's proxy headers
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -183,7 +191,6 @@ CORS_ALLOW_CREDENTIALS = True
 # In DEBUG, allow all origins so local dev on any Vite port works
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
-
 # Email / SendGrid SMTP Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.sendgrid.net')
