@@ -182,11 +182,21 @@ SIMPLE_JWT = {
 }
 
 # CORS Settings
-cors_origins_env = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
+cors_origins_env = os.getenv(
+    'CORS_ALLOWED_ORIGINS',
+    'http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174'
+)
 CORS_ALLOWED_ORIGINS = [
     origin.strip() for origin in cors_origins_env.split(',') if origin.strip()
 ]
+
+# Always allow the Vercel frontend regardless of DEBUG setting
+CORS_ALLOWED_ORIGINS += [
+    'https://tru-fitness.vercel.app',
+]
+
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL', 'False').lower() in ('true', '1', 'yes')
 
 # In DEBUG, allow all origins so local dev on any Vite port works
 if DEBUG:
