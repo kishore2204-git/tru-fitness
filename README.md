@@ -3,7 +3,7 @@
 A Django + React web app for managing gym members, plans, payments, and attendance.
 
 Live site: https://tru-fitness.vercel.app
-Backend API: https://tru-fitness-1.onrender.com
+
 
 Admin login:
 - Username: admin
