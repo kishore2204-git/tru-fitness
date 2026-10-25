@@ -1,22 +1,14 @@
-# Mall Parking Management System
+# TRU FITNESS - Gym Management System
 
-A Django web app that automates vehicle entry, slot allocation, billing, and exit for a multi-floor mall parking lot.
+A Django + React web app for managing gym members, plans, payments, and attendance.
 
-**Live demo:** https://mall-parking-tm7p.onrender.com
+Live site: https://tru-fitness.vercel.app
+Backend API: https://tru-fitness-1.onrender.com
 
-**Admin login**
-- Username: parkingadmin
-- Password: parking123
+Admin login:
+- Username: admin
+- Password: admin123
 
-**Key features**
-- Smart allocation of car, bike, and VIP slots
-- Automatic ticket generation with unique ID
-- Billing based on parking duration (different rates for VIP)
-- Email ticket sent via SendGrid (check spam folder)
-
-**Tech stack**
-- Backend: Django (Python)
-- Frontend: HTML + CSS
-- Database: PostgreSQL (Render)
-- Deployment: Render
-- Email service: SendGrid API
+Demo member:
+- Name: Rahul Sharma
+- Phone: 9876543210
